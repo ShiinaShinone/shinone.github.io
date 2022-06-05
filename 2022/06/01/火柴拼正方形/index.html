@@ -16,22 +16,23 @@
   <meta name="author" content="筱音">
   <meta name="keywords" content="">
   
-    <meta name="description" content="初始化初始化第一篇文章">
+    <meta name="description" content="题目你将得到一个整数数组 matchsticks ，其中 matchsticks[i] 是第 i 个火柴棒的长度。你要用 所有的火柴棍 拼成一个正方形。你 不能折断 任何一根火柴棒，但你可以把它们连在一起，而且每根火柴棒必须 使用一次 。 如果你能使这个正方形，则返回 true ，否则返回 false 。 示例 1: 123输入: matchsticks &#x3D; [1,1,2,2,2]输出: true">
 <meta property="og:type" content="article">
-<meta property="og:title" content="页面各种初始化学习">
-<meta property="og:url" content="http://shinone.com/2022/05/27/%E9%A1%B5%E9%9D%A2%E5%90%84%E7%A7%8D%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="473. 火柴拼正方形">
+<meta property="og:url" content="http://shinone.com/2022/06/01/%E7%81%AB%E6%9F%B4%E6%8B%BC%E6%AD%A3%E6%96%B9%E5%BD%A2/index.html">
 <meta property="og:site_name" content="shinone&#39;s blog">
-<meta property="og:description" content="初始化初始化第一篇文章">
+<meta property="og:description" content="题目你将得到一个整数数组 matchsticks ，其中 matchsticks[i] 是第 i 个火柴棒的长度。你要用 所有的火柴棍 拼成一个正方形。你 不能折断 任何一根火柴棒，但你可以把它们连在一起，而且每根火柴棒必须 使用一次 。 如果你能使这个正方形，则返回 true ，否则返回 false 。 示例 1: 123输入: matchsticks &#x3D; [1,1,2,2,2]输出: true">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-27T09:43:39.000Z">
-<meta property="article:modified_time" content="2022-05-28T07:34:34.612Z">
+<meta property="article:published_time" content="2022-06-01T02:00:30.000Z">
+<meta property="article:modified_time" content="2022-06-05T03:44:16.571Z">
 <meta property="article:author" content="筱音">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="深度优先搜索">
+<meta property="article:tag" content="回溯">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>页面各种初始化学习 - shinone&#39;s blog</title>
+  <title>473. 火柴拼正方形 - shinone&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -188,13 +189,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('http://47.108.181.185:7308/2022052809.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('http://47.108.181.185:7308/2022052801.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="页面各种初始化学习"></span>
+            <span id="subtitle" data-typed-text="473. 火柴拼正方形"></span>
           
         </div>
 
@@ -205,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-27 17:43" pubdate>
-          2022年5月27日 下午
+        <time datetime="2022-06-01 10:00" pubdate>
+          2022年6月1日 上午
         </time>
       </span>
     
@@ -217,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11 字
+          1.2k 字
         
       </span>
     
@@ -228,7 +229,7 @@
         
         
         
-          1 分钟
+          11 分钟
         
       </span>
     
@@ -266,11 +267,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">页面各种初始化学习</h1>
+            <h1 style="display: none">473. 火柴拼正方形</h1>
             
             <div class="markdown-body">
               
-              <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><p>初始化第一篇文章</p>
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>你将得到一个整数数组 matchsticks ，其中 matchsticks[i] 是第 i 个火柴棒的长度。你要用 所有的火柴棍 拼成一个正方形。你 不能折断 任何一根火柴棒，但你可以把它们连在一起，而且每根火柴棒必须 使用一次 。</p>
+<p>如果你能使这个正方形，则返回 true ，否则返回 false 。</p>
+<p>示例 1:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: matchsticks = [1,1,2,2,2]</span><br><span class="hljs-section">输出: true</span><br><span class="hljs-section">解释: 能拼成一个边长为2的正方形，每边两根火柴。</span><br></code></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/matchsticks-to-square">https://leetcode.cn/problems/matchsticks-to-square</a></p>
+<h1 id="回溯法-dfs"><a href="#回溯法-dfs" class="headerlink" title="回溯法-dfs"></a>回溯法-dfs</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">makesquare</span><span class="hljs-params">(<span class="hljs-type">int</span>[] matchsticks)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">totalLen</span> <span class="hljs-operator">=</span> Arrays.stream(matchsticks).sum();<br>        <span class="hljs-keyword">if</span> (totalLen % <span class="hljs-number">4</span> != <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        Arrays.sort(matchsticks);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = matchsticks.length - <span class="hljs-number">1</span>; i &lt; j; i++, j--) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> matchsticks[i];<br>            matchsticks[i] = matchsticks[j];<br>            matchsticks[j] = temp;<br>        &#125;<br><br>        <span class="hljs-type">int</span>[] edges = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">4</span>];<br>        <span class="hljs-keyword">return</span> dfs(<span class="hljs-number">0</span>, matchsticks, edges, totalLen / <span class="hljs-number">4</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> index, <span class="hljs-type">int</span>[] matchsticks, <span class="hljs-type">int</span>[] edges, <span class="hljs-type">int</span> len)</span> &#123;<br>        <span class="hljs-keyword">if</span> (index == matchsticks.length) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; edges.length; i++) &#123;<br>            edges[i] += matchsticks[index];<br>            <span class="hljs-keyword">if</span> (edges[i] &lt;= len &amp;&amp; dfs(index + <span class="hljs-number">1</span>, matchsticks, edges, len)) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>            edges[i] -= matchsticks[index];<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>1、先求出所有火柴的长度总和，如果总和模4不为0则直接返回<br>2、对火柴长度从大到小排序（这一步是为了在dfs的时候降低时间消耗）<br>3、数组edges记录四个边的当前长度，然后依次把每一根火柴放入一个边进行尝试，失败就回溯状态换下一条边， 找到一个能恰好全部放下的结果<br>因为有四条边，每根火柴都要尝试四次，所以每新增一根火柴就要乘上四次。<br>时间复杂度O(4^n)</p>
 
               
             </div>
@@ -288,8 +295,22 @@
     
       <span class="category-chain">
         
-  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">算法与数据结构</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="category-chain-item">力扣每日一题</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/" class="category-chain-item">中等</a>
+  
+  
+
+  
+
   
 
       </span>
@@ -303,7 +324,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#深度优先搜索</a>
+      
+        <a href="/tags/%E5%9B%9E%E6%BA%AF/">#回溯</a>
       
     </div>
   
@@ -315,8 +338,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>页面各种初始化学习</div>
-      <div>http://shinone.com/2022/05/27/页面各种初始化学习/</div>
+      <div>473. 火柴拼正方形</div>
+      <div>http://shinone.com/2022/06/01/火柴拼正方形/</div>
     </div>
     <div class="license-meta">
       
@@ -328,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月27日</div>
+          <div>2022年6月1日</div>
         </div>
       
       
@@ -358,15 +381,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/30/%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/" title="1022.从根到叶的二进制数之和">
+                      <a href="/2022/06/05/%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/" title="929. 独特的电子邮件地址">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1022.从根到叶的二进制数之和</span>
+                        <span class="hidden-mobile">929. 独特的电子邮件地址</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/05/31/%E5%A4%96%E6%98%9F%E6%96%87%E5%AD%97%E5%85%B8/" title="剑指 Offer II 114. 外星文字典">
+                        <span class="hidden-mobile">剑指 Offer II 114. 外星文字典</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

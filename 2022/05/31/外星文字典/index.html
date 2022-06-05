@@ -16,22 +16,24 @@
   <meta name="author" content="筱音">
   <meta name="keywords" content="">
   
-    <meta name="description" content="初始化初始化第一篇文章">
+    <meta name="description" content="题目现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。 给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。 请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 “” 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。 字符串 s 字典顺序小于 字符串 t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="页面各种初始化学习">
-<meta property="og:url" content="http://shinone.com/2022/05/27/%E9%A1%B5%E9%9D%A2%E5%90%84%E7%A7%8D%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="剑指 Offer II 114. 外星文字典">
+<meta property="og:url" content="http://shinone.com/2022/05/31/%E5%A4%96%E6%98%9F%E6%96%87%E5%AD%97%E5%85%B8/index.html">
 <meta property="og:site_name" content="shinone&#39;s blog">
-<meta property="og:description" content="初始化初始化第一篇文章">
+<meta property="og:description" content="题目现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。 给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。 请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 “” 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。 字符串 s 字典顺序小于 字符串 t">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-27T09:43:39.000Z">
-<meta property="article:modified_time" content="2022-05-28T07:34:34.612Z">
+<meta property="article:published_time" content="2022-05-31T08:19:05.000Z">
+<meta property="article:modified_time" content="2022-06-05T03:44:16.570Z">
 <meta property="article:author" content="筱音">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="拓扑排序">
+<meta property="article:tag" content="广度优先搜索">
+<meta property="article:tag" content="图">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>页面各种初始化学习 - shinone&#39;s blog</title>
+  <title>剑指 Offer II 114. 外星文字典 - shinone&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -188,13 +190,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('http://47.108.181.185:7308/2022052809.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('http://47.108.181.185:7308/2022052801.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="页面各种初始化学习"></span>
+            <span id="subtitle" data-typed-text="剑指 Offer II 114. 外星文字典"></span>
           
         </div>
 
@@ -205,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-27 17:43" pubdate>
-          2022年5月27日 下午
+        <time datetime="2022-05-31 16:19" pubdate>
+          2022年5月31日 下午
         </time>
       </span>
     
@@ -217,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11 字
+          2.6k 字
         
       </span>
     
@@ -228,7 +230,7 @@
         
         
         
-          1 分钟
+          22 分钟
         
       </span>
     
@@ -266,11 +268,24 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">页面各种初始化学习</h1>
+            <h1 style="display: none">剑指 Offer II 114. 外星文字典</h1>
             
             <div class="markdown-body">
               
-              <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><p>初始化第一篇文章</p>
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。</p>
+<p>给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。</p>
+<p>请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 “” 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。</p>
+<p>字符串 s 字典顺序小于 字符串 t 有两种情况：</p>
+<p>在第一个不同字母处，如果 s 中的字母在这门外星语言的字母顺序中位于 t 中字母之前，那么 s 的字典顺序小于 t 。<br>如果前面 min(s.length, t.length) 字母都相同，那么 s.length &lt; t.length 时，s 的字典顺序也小于 t 。</p>
+<p>示例 1：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs applescript">输入：<span class="hljs-built_in">words</span> = [<span class="hljs-string">&quot;wrt&quot;</span>,<span class="hljs-string">&quot;wrf&quot;</span>,<span class="hljs-string">&quot;er&quot;</span>,<span class="hljs-string">&quot;ett&quot;</span>,<span class="hljs-string">&quot;rftt&quot;</span>]<br>输出：<span class="hljs-string">&quot;wertf&quot;</span><br></code></pre></td></tr></table></figure>
+<p>示例 2：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs applescript">输入：<span class="hljs-built_in">words</span> = [<span class="hljs-string">&quot;z&quot;</span>,<span class="hljs-string">&quot;x&quot;</span>]<br>输出：<span class="hljs-string">&quot;zx&quot;</span><br></code></pre></td></tr></table></figure>
+<p>示例 3：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs applescript">输入：<span class="hljs-built_in">words</span> = [<span class="hljs-string">&quot;z&quot;</span>,<span class="hljs-string">&quot;x&quot;</span>,<span class="hljs-string">&quot;z&quot;</span>]<br>输出：<span class="hljs-string">&quot;&quot;</span><br>解释：不存在合法字母顺序，因此返回 <span class="hljs-string">&quot;&quot;</span> 。<br></code></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/Jf1JuT">https://leetcode.cn/problems/Jf1JuT</a></p>
+<h1 id="建图-拓扑排序-bfs"><a href="#建图-拓扑排序-bfs" class="headerlink" title="建图+拓扑排序+bfs"></a>建图+拓扑排序+bfs</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>        <span class="hljs-keyword">public</span> String <span class="hljs-title function_">alienOrder</span><span class="hljs-params">(String[] words)</span> &#123;<br>            Map&lt;Character, Set&lt;Character&gt;&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;(<span class="hljs-number">26</span>); <span class="hljs-comment">// 指向</span><br>            <span class="hljs-type">int</span>[] in = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>]; <span class="hljs-comment">// 入度</span><br>            Set&lt;Character&gt; countSet = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;(); <span class="hljs-comment">// 出现过的字母</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> words.length;<br>            Arrays.fill(in, -<span class="hljs-number">1</span>);<br>            <span class="hljs-comment">// 构建图</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>                <span class="hljs-comment">// 统计所有出现过的字母</span><br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : words[i].toCharArray()) &#123;<br>                    countSet.add(c);<br>                &#125;<br>                <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-comment">// 统计各字母的入度</span><br>                    <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>                    <span class="hljs-type">char</span>[] chars1 = words[i - <span class="hljs-number">1</span>].toCharArray();<br>                    <span class="hljs-type">char</span>[] chars2 = words[i].toCharArray();<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">clen</span> <span class="hljs-operator">=</span> Math.min(chars1.length, chars2.length);<br>                    <span class="hljs-keyword">while</span> (index &lt; clen &amp;&amp; chars1[index] == chars2[index]) index++;<br>                    <span class="hljs-keyword">if</span> (index == clen)&#123;<br>                        <span class="hljs-keyword">if</span> (chars1.length &gt; clen) <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;<br>                        <span class="hljs-keyword">continue</span>;<br>                    &#125;<br>                    build(map, chars1[index], chars2[index], in);<br>                &#125;<br>            &#125;<br>            <span class="hljs-comment">//bfs</span><br>            Deque&lt;Character&gt; deque = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">26</span>; i++)&#123;<br>                <span class="hljs-comment">// 出现过，并且入度为0的字母全都加入队列</span><br>                <span class="hljs-keyword">if</span> (countSet.contains((<span class="hljs-type">char</span>)(<span class="hljs-string">&#x27;a&#x27;</span> + i)) &amp;&amp; in[i] &lt; <span class="hljs-number">1</span>)&#123;<br>                    deque.addLast((<span class="hljs-type">char</span>) (i + <span class="hljs-string">&#x27;a&#x27;</span>));<br>                &#125;<br>            &#125;<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">while</span> (!deque.isEmpty())&#123;<br>                <span class="hljs-comment">// 把队列首部的字母全都组装起来，并且它所到达的字母入度减一，</span><br>                <span class="hljs-comment">// 把所有入度为0的字母再加到队列尾部</span><br>                <span class="hljs-type">Character</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> deque.pollFirst();<br>                builder.append(c1);<br>                Set&lt;Character&gt; set = map.getOrDefault(c1, <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;());<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : set)&#123;<br>                    in[c - <span class="hljs-string">&#x27;a&#x27;</span>]--;<br>                    <span class="hljs-keyword">if</span> (in[c - <span class="hljs-string">&#x27;a&#x27;</span>] == <span class="hljs-number">0</span>) deque.addLast(c);<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">return</span> builder.length() == countSet.size() ? builder.toString() : <span class="hljs-string">&quot;&quot;</span>;<br>        &#125;<br>        <span class="hljs-comment">// 建立c1-&gt;c2的单向边</span><br>        <span class="hljs-keyword">void</span> <span class="hljs-title function_">build</span><span class="hljs-params">(Map&lt;Character, Set&lt;Character&gt;&gt; map, <span class="hljs-type">char</span> c1, <span class="hljs-type">char</span> c2, <span class="hljs-type">int</span>[] in)</span> &#123;<br>            <span class="hljs-keyword">if</span> (c1 == c2) <span class="hljs-keyword">return</span>;<br>            Set&lt;Character&gt; c1Set = map.getOrDefault(c1, <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;());<br>            <span class="hljs-keyword">if</span> (!c1Set.contains(c2))&#123;<br>                c1Set.add(c2);<br>                <span class="hljs-keyword">if</span> (in[c2 - <span class="hljs-string">&#x27;a&#x27;</span>] &lt; <span class="hljs-number">0</span>) in[c2 - <span class="hljs-string">&#x27;a&#x27;</span>] = <span class="hljs-number">0</span>;<br>                in[c2 - <span class="hljs-string">&#x27;a&#x27;</span>]++;<br>                map.put(c1, c1Set);<br>            &#125;<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>主要知识点是拓扑排序，还是很容易理解的。<br>贴一下有图解的博客链接：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/chenweiye1/article/details/113563417">https://blog.csdn.net/chenweiye1/article/details/113563417</a><br>题目里的坑主要集中于以下几个用例：<br>[“x”, “x”]: “x”<br>[“xy”, “x”]: “”<br>[“x”, “xy”]: “xy”</p>
 
               
             </div>
@@ -288,8 +303,22 @@
     
       <span class="category-chain">
         
-  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">算法与数据结构</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="category-chain-item">力扣每日一题</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/" class="category-chain-item">困难</a>
+  
+  
+
+  
+
   
 
       </span>
@@ -303,7 +332,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">#拓扑排序</a>
+      
+        <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#广度优先搜索</a>
+      
+        <a href="/tags/%E5%9B%BE/">#图</a>
       
     </div>
   
@@ -315,8 +348,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>页面各种初始化学习</div>
-      <div>http://shinone.com/2022/05/27/页面各种初始化学习/</div>
+      <div>剑指 Offer II 114. 外星文字典</div>
+      <div>http://shinone.com/2022/05/31/外星文字典/</div>
     </div>
     <div class="license-meta">
       
@@ -328,7 +361,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月27日</div>
+          <div>2022年5月31日</div>
         </div>
       
       
@@ -358,15 +391,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/30/%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/" title="1022.从根到叶的二进制数之和">
+                      <a href="/2022/06/01/%E7%81%AB%E6%9F%B4%E6%8B%BC%E6%AD%A3%E6%96%B9%E5%BD%A2/" title="473. 火柴拼正方形">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1022.从根到叶的二进制数之和</span>
+                        <span class="hidden-mobile">473. 火柴拼正方形</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/05/30/%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/" title="1022.从根到叶的二进制数之和">
+                        <span class="hidden-mobile">1022.从根到叶的二进制数之和</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
