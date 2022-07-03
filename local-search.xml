@@ -4,6 +4,243 @@
   
   
   <entry>
+    <title>绘画20220703</title>
+    <link href="/2022/07/03/%E7%BB%98%E7%94%BB20220703/"/>
+    <url>/2022/07/03/%E7%BB%98%E7%94%BB20220703/</url>
+    
+    <content type="html"><![CDATA[<p><img src="http://47.108.181.185:7308/D20220703.png" alt="透视练习"></p><p>…菜菜的透视练习，下一个练头部吧</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>板绘</category>
+      
+      <category>透视</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>日记20220630</title>
+    <link href="/2022/06/30/%E6%97%A5%E8%AE%B020220630/"/>
+    <url>/2022/06/30/%E6%97%A5%E8%AE%B020220630/</url>
+    
+    <content type="html"><![CDATA[<p>现在就感觉自己很虚无啊…</p><p>你说那些技术学是学了，平时工作又用不到，那么就会开始忘，毕竟要背要记的还是很多的。<br>等到忘得差不多了，其实用去学习所消耗的所有时间只做到了一件事：知道某个技术是干啥的，记得一些重点的大概的模糊的感觉。</p><p>学完nio和netty，现在就只记得高性能网络编程框架，基于选择器管道和缓冲的非阻塞io实现，然后呢，平时都做的传统web应用，<br>现在能不复习不看参考从零写个接口吗，不太行，两个月过去api都快忘光了(´；ω；`)</p><p>学完mysql底层，哦哦，表结构、行结构、一页16kb，分段，mvcc，redo，undo，binlog，我可太有映象了，那详细说说？<br>…我又不是去参加什么考试，一工作上用不到这么细，二又不做题不考试，哪全背得。</p><p>那…为啥要对暂时用不到的技术投入那么多时间呢。<br>我大可以各种技术每种都去简单了解下背景，是什么，干什么，能做到什么，能解决什么问题，然后写一些简单的helloworld，<br>到这一步就够了，留下映象，等要用了再去深入学不迟。</p><p>感觉自己好像会的还蛮多的，但是感觉自己好像什么都不会，就感觉学医的都是神仙，那么多书是怎么背下来的，<br>别说月，学完半个月不用我就开始忘了。</p><p>比起上层技术，果然还是有时间不如扎实的去学习巩固下层基础。</p><p>过一遍racketMQ继续去学习设计模式和jvm</p><p>就感觉一切都怪那些培训机构、公众号、内卷面试天天散播焦虑。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常</category>
+      
+      <category>日记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>522. 最长特殊序列 II</title>
+    <link href="/2022/06/30/%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97II/"/>
+    <url>/2022/06/30/%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97II/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定字符串列表 strs ，返回其中 最长的特殊序列 的长度。如果最长特殊序列不存在，返回 -1 。</p><p>特殊序列 定义如下：该序列为某字符串 独有的子序列（即不能是其他字符串的子序列）。</p><p>s 的 子序列可以通过删去字符串 s 中的某些字符实现。</p><p>例如，”abc” 是 “aebdc” 的子序列，因为您可以删除”aebdc”中的下划线字符来得到 “abc” 。”aebdc”的子序列还包括”aebdc”、 “aeb” 和 “” (空字符串)。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/longest-uncommon-subsequence-ii">https://leetcode.cn/problems/longest-uncommon-subsequence-ii</a></p><h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><p>题目很绕，但是其实如果一个字符串str，他本身不是特殊序列，那么所有他的子串都不可能是特殊序列。<br>因为他本身都出现过了，那么子串必然也出现过。<br>再反过来想，如果一个字符串的任何一个子串是特殊序列，那么不管在子串上加多少字符必然都是特殊序列。</p><p>所以这题就变成了：挨个去判断str是不是其他字符串的子序列。<br>然后找出符合条件的str里最长的那个的长度</p><h1 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findLUSlength</span><span class="hljs-params">(String[] strs)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        mm:<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; strs.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (strs[i].length() &gt; ans) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; strs.length; j++) &#123;<br>                    <span class="hljs-keyword">if</span> (j != i &amp;&amp; isSubStr(strs[i], strs[j])) &#123;<br>                        <span class="hljs-keyword">continue</span> mm;<br>                    &#125;<br>                &#125;<br>                ans = strs[i].length();<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isSubStr</span><span class="hljs-params">(String s1, String s2)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> s1.length(), n = s2.length();<br>        <span class="hljs-keyword">if</span> (m &gt; n) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m &amp;&amp; j &lt; n; j++) &#123;<br>            <span class="hljs-keyword">if</span> (s1.charAt(i) == s2.charAt(j)) &#123;<br>                i++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">return</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span>= m;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h1 id="LCS"><a href="#LCS" class="headerlink" title="LCS"></a>LCS</h1><p>同样的也可以转化成lcs问题，判断一个字符串a和字符串b中的最长公共子序列的长度len，如果len等于a的长度，那么a就是b的一个子序列<br>基本LCS问题: <a href="http://shinone.cn/2022/06/30/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/">http://shinone.cn/2022/06/30/最长公共子序列/</a></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findLUSlength</span><span class="hljs-params">(String[] strs)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> strs.length, ans = -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (strs[i].length() &lt;= ans) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">ok</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n &amp;&amp; ok; j++) &#123;<br>                <span class="hljs-keyword">if</span> (i == j) <span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">if</span> (check(strs[i], strs[j])) ok = <span class="hljs-literal">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (ok) ans = strs[i].length();<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>    <span class="hljs-type">boolean</span> <span class="hljs-title function_">check</span><span class="hljs-params">(String s1, String s2)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> s1.length(), m = s2.length();<br>        <span class="hljs-keyword">if</span> (m &lt; n) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-type">int</span>[][] f = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>][m + <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= m; j++) &#123;<br>                f[i][j] = s1.charAt(i - <span class="hljs-number">1</span>) == s2.charAt(j - <span class="hljs-number">1</span>) ? f[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span> : f[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>];<br>                f[i][j] = Math.max(f[i][j], f[i - <span class="hljs-number">1</span>][j]);<br>                f[i][j] = Math.max(f[i][j], f[i][j - <span class="hljs-number">1</span>]);<br>                <span class="hljs-keyword">if</span> (f[i][j] == n) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;<br>作者：AC_OIer<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法与数据结构</category>
+      
+      <category>力扣每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LCS</tag>
+      
+      <tag>模拟</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>1143. 最长公共子序列</title>
+    <link href="/2022/06/30/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    <url>/2022/06/30/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。</p><p>一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。</p><p>例如，”ace” 是 “abcde” 的子序列，但 “aec” 不是 “abcde” 的子序列。<br>两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。</p><p>示例 1：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">输入：text1 = <span class="hljs-string">&quot;abcde&quot;</span>, text2 = <span class="hljs-string">&quot;ace&quot;</span><br>输出：<span class="hljs-number">3</span>  <br>解释：最长公共子序列是 <span class="hljs-string">&quot;ace&quot;</span> ，它的长度为 <span class="hljs-number">3</span> 。<br></code></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/longest-common-subsequence">https://leetcode.cn/problems/longest-common-subsequence</a></p><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">longestCommonSubsequence</span><span class="hljs-params">(String text1, String text2)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">l1</span> <span class="hljs-operator">=</span> text1.length(),l2 = text2.length();<br>        <span class="hljs-type">int</span>[][] f = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[l1 + <span class="hljs-number">1</span>][l2 + <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= l1 ; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= l2; j++) &#123;<br>                <span class="hljs-keyword">if</span> (text1.charAt(i - <span class="hljs-number">1</span>) == text2.charAt(j - <span class="hljs-number">1</span>)) &#123;<br>                    f[i][j] = f[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>                &#125;<span class="hljs-keyword">else</span> &#123;<br>                    f[i][j] = Math.max(f[i - <span class="hljs-number">1</span>][j], f[i][j - <span class="hljs-number">1</span>]);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> f[l1][l2];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>f[i][j]的定义是只考虑到t1的前i个字符和t2的前j个字符，<br>最长的公共子序列是多长。<br>状态转移方程就是，如果新增的字符相等，则最长子序列等于只考虑i-1 和 j-1时的最长长度 + 1；<br>如果新增的字符不相等，则选择不考虑t1的前一个字符或者不考虑t2的前一个字符里更长的那个。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法与数据结构</category>
+      
+      <category>力扣每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动态规划</tag>
+      
+      <tag>LCS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>324. 摆动排序 II</title>
+    <link href="/2022/06/29/%E6%91%86%E5%8A%A8%E6%8E%92%E5%BA%8FII/"/>
+    <url>/2022/06/29/%E6%91%86%E5%8A%A8%E6%8E%92%E5%BA%8FII/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ol start="324"><li>摆动排序 II<br>给你一个整数数组 nums，将它重新排列成 nums[0] &lt; nums[1] &gt; nums[2] &lt; nums[3]… 的顺序。<br>你可以假设所有输入数组都可以得到满足题目要求的结果。</li></ol><p>示例 1：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">输入：nums = [<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">6</span>,<span class="hljs-number">4</span>]<br>输出：[<span class="hljs-number">1</span>,<span class="hljs-number">6</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]<br>解释：[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">6</span>] 同样是符合题目要求的结果，可以被判题程序接受。<br></code></pre></td></tr></table></figure><p>示例 2：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">输入：nums = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>]<br>输出：[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br></code></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/wiggle-sort-ii/">https://leetcode.cn/problems/wiggle-sort-ii/</a></p><h1 id="快速选择-三路分治-虚拟地址"><a href="#快速选择-三路分治-虚拟地址" class="headerlink" title="快速选择+三路分治+虚拟地址"></a>快速选择+三路分治+虚拟地址</h1><p>来自三叶大佬的题解，只是看懂了而已，并不是我能做得出来的难度…<br>要达到On时间复杂度和O1的空间复杂度是真的…好难啊</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span>[] nums;<br>    <span class="hljs-type">int</span> n;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">qselect</span><span class="hljs-params">(<span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-keyword">if</span> (l == r) <span class="hljs-keyword">return</span> nums[l];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> nums[l + r &gt;&gt; <span class="hljs-number">1</span>], i = l - <span class="hljs-number">1</span>, j = r + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>            <span class="hljs-keyword">do</span> i++; <span class="hljs-keyword">while</span> (nums[i] &lt; x);<br>            <span class="hljs-keyword">do</span> j--; <span class="hljs-keyword">while</span> (nums[j] &gt; x);<br>            <span class="hljs-keyword">if</span> (i &lt; j) swap(i, j);<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> j - l + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (k &lt;= cnt) <span class="hljs-keyword">return</span> qselect(l, j, k);<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> qselect(j + <span class="hljs-number">1</span>, r, k - cnt);<br>    &#125;<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> nums[a];<br>        nums[a] = nums[b];<br>        nums[b] = c;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">getIdx</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> &#123;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-number">2</span> * x + <span class="hljs-number">1</span>) % (n | <span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">wiggleSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] _nums)</span> &#123;<br>        nums = _nums;<br>        n = nums.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> qselect(<span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>, n + <span class="hljs-number">1</span> &gt;&gt; <span class="hljs-number">1</span>);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, r = n - <span class="hljs-number">1</span>, loc = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (loc &lt;= r) &#123;<br>            <span class="hljs-keyword">if</span> (nums[getIdx(loc)] &gt; x) swap(getIdx(loc++), getIdx(l++));<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[getIdx(loc)] &lt; x) swap(getIdx(loc), getIdx(r--));<br>            <span class="hljs-keyword">else</span> loc++;<br>        &#125;<br>    &#125;<br>&#125;<br>作者：AC_OIer<br></code></pre></td></tr></table></figure><p>首先肯定是考虑排个序一个大一个小直接开摆就行，但是会出现这种问题:<br>412321排序：112234<br>一个大一个小：413122，然后挂了<br>必须要把中间的2，分到互相远离的地方，也就是：423121 这样才行<br>而且排序的复杂度是nlogn</p><p>首先快速选择算法 On复杂度找到中位数：2<br>然后三路分治排序复杂度是On：小于2的放左边等于2的放中间大于2的放右边 可能是112234也可能是112243</p><p>最后这步，可以用复制一个数组的方式摆，但是空间复杂度就会是On，要降为O1就需要用虚拟地址的方式进行第二步的三路分治<br>也就是写一个函数f(x) -&gt; y<br>x = 0 (1), y = 1<br>x = 1 (1), y = 3<br>x = 2 (2), y = 5<br>x = 3 (2), y = 0<br>x = 4 (3), y = 2<br>x = 5 (4), y = 4<br>排序逻辑正常按照x的值排序，但是实际交换是交换的f(x)的地址，达到错开的效果<br>理论上排序之后的结果：112234<br>实际结果：213142</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法与数据结构</category>
+      
+      <category>力扣每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>快速选择</tag>
+      
+      <tag>虚拟地址</tag>
+      
+      <tag>三路分治</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>剑指 Offer II 091. 粉刷房子</title>
+    <link href="/2022/06/29/%E7%B2%89%E5%88%B7%E6%88%BF%E5%AD%90/"/>
+    <url>/2022/06/29/%E7%B2%89%E5%88%B7%E6%88%BF%E5%AD%90/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>假如有一排房子，共 n 个，每个房子可以被粉刷成红色、蓝色或者绿色这三种颜色中的一种，你需要粉刷所有的房子并且使其相邻的两个房子颜色不能相同。</p><p>当然，因为市场上不同颜色油漆的价格不同，所以房子粉刷成不同颜色的花费成本也是不同的。每个房子粉刷成不同颜色的花费是以一个 n x 3 的正整数矩阵 costs 来表示的。</p><p>例如，costs[0][0] 表示第 0 号房子粉刷成红色的成本花费；costs[1][2] 表示第 1 号房子粉刷成绿色的花费，以此类推。</p><p>请计算出粉刷完所有房子最少的花费成本。</p><p>示例 1：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入: costs = <span class="hljs-string">[[17,2,17],[16,16,5],[14,3,19]]</span><br>输出: <span class="hljs-number">10</span><br>解释: 将 <span class="hljs-number">0</span> 号房子粉刷成蓝色，<span class="hljs-number">1</span> 号房子粉刷成绿色，<span class="hljs-number">2</span> 号房子粉刷成蓝色。<br>最少花费: <span class="hljs-number">2</span> + <span class="hljs-number">5</span> + <span class="hljs-number">3</span> = <span class="hljs-number">10</span>。<br></code></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/JEj789">https://leetcode.cn/problems/JEj789</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minCost</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] cs)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> cs.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> cs[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>], b = cs[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>], c = cs[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> Math.min(b + cs[i][<span class="hljs-number">0</span>], c + cs[i][<span class="hljs-number">0</span>]);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">e</span> <span class="hljs-operator">=</span> Math.min(a + cs[i][<span class="hljs-number">1</span>], c + cs[i][<span class="hljs-number">1</span>]);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> Math.min(a + cs[i][<span class="hljs-number">2</span>], b + cs[i][<span class="hljs-number">2</span>]);<br>            a=d; b = e; c = f;<br>        &#125;<br>        <span class="hljs-keyword">return</span> Math.min(Math.min(a, b), c);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>记最后一栋房子刷abc三种油漆的总价分别为Ca Cb Cc，第i号房子刷的油漆价格为ai bi ci。</p><p>已知房子0，刷三种颜色的油漆分别需要a0(cs[0][1])、b0(cs[0][2])、c0(cs[0][3])<br>这时候的总价为 Ca = a0, Cb = b0, Cc = c0;</p><p>房子0 + 房子1 刷每种油漆的价格最低的总价计算方式：<br>因为房子颜色不能重复，房子1 要刷a颜料，那么就只能a1加上上一栋房子，也就是房子0的b和c颜料这俩里价格更低的那个:<br>Ca = Min(a1 + Cb, a1 + Cc);<br>意思就是房子1刷a颜料，考虑到房子0，总价的最低价格是多少；<br>依次算出Cb和Cc，然后保持这个计算方式推完所有房子；<br>到最后一栋房子的时候得到三个最低总价，取三个中最低的那个就是最后的答案。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法与数据结构</category>
+      
+      <category>力扣每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动态规划</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>535. tinyurl的加密与解密</title>
+    <link href="/2022/06/29/tinyurl%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/"/>
+    <url>/2022/06/29/tinyurl%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>TinyURL 是一种 URL 简化服务， 比如：当你输入一个 URL <a href="https://leetcode.com/problems/design-tinyurl">https://leetcode.com/problems/design-tinyurl</a> 时，它将返回一个简化的URL <a href="http://tinyurl.com/4e9iAk">http://tinyurl.com/4e9iAk</a> 。请你设计一个类来加密与解密 TinyURL 。</p><p>加密和解密算法如何设计和运作是没有限制的，你只需要保证一个 URL 可以被加密成一个 TinyURL ，并且这个 TinyURL 可以用解密方法恢复成原本的 URL 。</p><p>实现 Solution 类：</p><p>Solution() 初始化 TinyURL 系统对象。<br>String encode(String longUrl) 返回 longUrl 对应的 TinyURL 。<br>String decode(String shortUrl) 返回 shortUrl 原本的 URL 。题目数据保证给定的 shortUrl 是由同一个系统对象加密的。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/encode-and-decode-tinyurl">https://leetcode.cn/problems/encode-and-decode-tinyurl</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p><h1 id="remark"><a href="#remark" class="headerlink" title="remark"></a>remark</h1><p>首先要保证长url不管加密多少次都会得到相同的短url，<br>然后要保证一个短url一定对应原有的长url；</p><h1 id="无为而治"><a href="#无为而治" class="headerlink" title="无为而治"></a>无为而治</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Codec</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">encode</span><span class="hljs-params">(String longUrl)</span> &#123;<br>        <span class="hljs-keyword">return</span> longUrl;<br>    &#125;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">decode</span><span class="hljs-params">(String shortUrl)</span> &#123;<br>        <span class="hljs-keyword">return</span> shortUrl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>好，我答完了（草）</p><h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Codec</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Map&lt;String, String&gt; origin2Tiny = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;(<span class="hljs-number">16</span>), tiny2Origin = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;(<span class="hljs-number">16</span>);<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">prefix</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://shinone.com/&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">K</span> <span class="hljs-operator">=</span> <span class="hljs-number">6</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Random</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">encode</span><span class="hljs-params">(String longUrl)</span> &#123;<br>        <span class="hljs-keyword">while</span> (!origin2Tiny.containsKey(longUrl)) &#123;<br>            <span class="hljs-type">char</span>[] cs = <span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[K];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; K; i++) cs[i] = str.charAt(random.nextInt(str.length()));<br>            <span class="hljs-type">String</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> prefix + String.valueOf(cs);<br>            <span class="hljs-keyword">if</span> (tiny2Origin.containsKey(cur)) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">synchronized</span> (Codec.class) &#123;<br>                <span class="hljs-keyword">if</span> (tiny2Origin.containsKey(cur)) <span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">if</span> (!origin2Tiny.containsKey(longUrl)) &#123;<br>                    tiny2Origin.put(cur, longUrl);<br>                    origin2Tiny.put(longUrl, cur);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> origin2Tiny.get(longUrl);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">decode</span><span class="hljs-params">(String shortUrl)</span> &#123;<br>        <span class="hljs-keyword">return</span> tiny2Origin.get(shortUrl);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>当工具类用不加锁会出大问题<br>单体应用好像可以这么搞，分布式的话得弄个缓存当哈希表用，还可以设置超时时间。<br>单体要弄超时的话就把value再封装进一个类里，然后不主动去删除，在每次判断包含不包含的时候，再额外判断一次是否超时，超时了就可以覆盖掉就行。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法与数据结构</category>
+      
+      <category>力扣每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>哈希</tag>
+      
+      <tag>tinyurl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>待填坑事项</title>
+    <link href="/2022/06/28/%E5%BE%85%E5%A1%AB%E5%9D%91%E4%BA%8B%E9%A1%B9/"/>
+    <url>/2022/06/28/%E5%BE%85%E5%A1%AB%E5%9D%91%E4%BA%8B%E9%A1%B9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="力扣"><a href="#力扣" class="headerlink" title="力扣"></a>力扣</h1><h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h1 id="日常"><a href="#日常" class="headerlink" title="日常"></a>日常</h1><p>说好的把所有听的歌的音源整理之后存云盘上，结果现在进度只有七分之一，怎么辉石呢</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>挖坑不埋</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>日记20220628</title>
+    <link href="/2022/06/28/%E6%97%A5%E8%AE%B020220628/"/>
+    <url>/2022/06/28/%E6%97%A5%E8%AE%B020220628/</url>
+    
+    <content type="html"><![CDATA[<p>闲的时候闲一天，忙的时候突然来一堆需求。<br>高强度工作两天了，完全没时间摸鱼做力扣(不是)<br>主要下班之后不太想写算法题啊，脑子都嗡嗡的。</p><p>为什么每天早上会这么痛苦呢…<br>生理上腰酸背疼，恶心反胃，拖着重重的身子上班。<br>心理上，生无可恋，害怕即将到来的一天。</p><p>反倒是开始上班了，开始敲代码就不会想那些有的没的，有事情的时候时间过得飞快，一下一天就结束了。</p><p>这两天倒是在项目上练了下以前一般不会接触的东西，<br>比如在服务运行时动态编译装载class类对象，然后调用orm框架根据生成的对象操作数据库<br>、AES对称加密<br>、自定义定时任务，创建暂停删除那些</p><p>…还是很难受，今天又掉进里世界，整个人在里面害怕、自卑了好一阵，临近下班才好些，我还是太菜了。</p><p>希望今晚能有点动力肝一下进度。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常</category>
+      
+      <category>日记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>日记20220625</title>
     <link href="/2022/06/25/%E6%97%A5%E8%AE%B020220625/"/>
     <url>/2022/06/25/%E6%97%A5%E8%AE%B020220625/</url>
@@ -159,11 +396,11 @@
     
     <tags>
       
+      <tag>哈希</tag>
+      
       <tag>二叉树</tag>
       
       <tag>深度优先搜索</tag>
-      
-      <tag>哈希</tag>
       
     </tags>
     
@@ -363,7 +600,7 @@
     <link href="/2022/06/05/%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/"/>
     <url>/2022/06/05/%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
     
-    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 ‘@’ 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 ‘.’ 或 ‘+’ 。</p><p>例如，在 <a href="mailto:&#x61;&#x6c;&#x69;&#99;&#101;&#64;&#x6c;&#x65;&#101;&#116;&#x63;&#x6f;&#100;&#101;&#x2e;&#99;&#111;&#x6d;">&#x61;&#x6c;&#x69;&#99;&#101;&#64;&#x6c;&#x65;&#101;&#116;&#x63;&#x6f;&#100;&#101;&#x2e;&#99;&#111;&#x6d;</a>中， alice 是 本地名 ，而 leetcode.com 是 域名 。<br>如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（’.’），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。</p><p>例如，”<a href="mailto:&#97;&#108;&#x69;&#99;&#101;&#46;&#x7a;&#x40;&#x6c;&#101;&#101;&#x74;&#99;&#x6f;&#100;&#101;&#46;&#99;&#111;&#109;">&#97;&#108;&#x69;&#99;&#101;&#46;&#x7a;&#x40;&#x6c;&#101;&#101;&#x74;&#99;&#x6f;&#100;&#101;&#46;&#99;&#111;&#109;</a>” 和 “<a href="mailto:&#x61;&#x6c;&#x69;&#x63;&#x65;&#122;&#64;&#108;&#x65;&#x65;&#x74;&#99;&#x6f;&#100;&#101;&#46;&#x63;&#111;&#x6d;">&#x61;&#x6c;&#x69;&#x63;&#x65;&#122;&#64;&#108;&#x65;&#x65;&#x74;&#99;&#x6f;&#100;&#101;&#46;&#x63;&#111;&#x6d;</a>” 会转发到同一电子邮件地址。<br>如果在 本地名 中添加加号（’+’），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。</p><p>例如 <a href="mailto:&#109;&#46;&#x79;&#x2b;&#x6e;&#97;&#x6d;&#x65;&#64;&#101;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#109;&#46;&#x79;&#x2b;&#x6e;&#97;&#x6d;&#x65;&#64;&#101;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a> 将转发到 <a href="mailto:&#109;&#x79;&#x40;&#101;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#109;&#x79;&#x40;&#101;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a>。<br>可以同时使用这两个规则。</p><p>给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。</p><p>示例 1：</p><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs perl">输入：emails = [<span class="hljs-string">&quot;test.email+alex@leetcode.com&quot;</span>,<span class="hljs-string">&quot;test.e.mail+bob.cathy@leetcode.com&quot;</span>,<span class="hljs-string">&quot;testemail+david@lee.tcode.com&quot;</span>]<br>输出：<span class="hljs-number">2</span><br>解释：实际收到邮件的是 <span class="hljs-string">&quot;testemail@leetcode.com&quot;</span> 和 <span class="hljs-string">&quot;testemail@lee.tcode.com&quot;</span>。<br></code></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/unique-email-addresses">https://leetcode.cn/problems/unique-email-addresses</a></p><h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numUniqueEmails</span><span class="hljs-params">(String[] emails)</span> &#123;<br>        Set&lt;String&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String s : emails) &#123;<br>            String[] ss = s.split(<span class="hljs-string">&quot;@&quot;</span>);<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : ss[<span class="hljs-number">0</span>].toCharArray()) &#123;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;.&#x27;</span>) <span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;+&#x27;</span>) <span class="hljs-keyword">break</span>;<br>                builder.append(c);<br>            &#125;<br>            set.add(builder + <span class="hljs-string">&quot;@&quot;</span> +ss[<span class="hljs-number">1</span>]);<br>        &#125; <br>        <span class="hljs-keyword">return</span> set.size();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>就是很简单的模拟题</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 ‘@’ 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 ‘.’ 或 ‘+’ 。</p><p>例如，在 <a href="mailto:&#x61;&#x6c;&#105;&#x63;&#x65;&#x40;&#108;&#101;&#101;&#x74;&#x63;&#111;&#100;&#101;&#46;&#x63;&#111;&#109;">&#x61;&#x6c;&#105;&#x63;&#x65;&#x40;&#108;&#101;&#101;&#x74;&#x63;&#111;&#100;&#101;&#46;&#x63;&#111;&#109;</a>中， alice 是 本地名 ，而 leetcode.com 是 域名 。<br>如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（’.’），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。</p><p>例如，”<a href="mailto:&#97;&#108;&#105;&#99;&#101;&#46;&#x7a;&#64;&#x6c;&#x65;&#x65;&#x74;&#x63;&#x6f;&#100;&#101;&#x2e;&#x63;&#x6f;&#109;">&#97;&#108;&#105;&#99;&#101;&#46;&#x7a;&#64;&#x6c;&#x65;&#x65;&#x74;&#x63;&#x6f;&#100;&#101;&#x2e;&#x63;&#x6f;&#109;</a>” 和 “<a href="mailto:&#x61;&#108;&#105;&#99;&#101;&#122;&#x40;&#x6c;&#x65;&#x65;&#x74;&#99;&#x6f;&#x64;&#101;&#46;&#x63;&#x6f;&#109;">&#x61;&#108;&#105;&#99;&#101;&#122;&#x40;&#x6c;&#x65;&#x65;&#x74;&#99;&#x6f;&#x64;&#101;&#46;&#x63;&#x6f;&#109;</a>” 会转发到同一电子邮件地址。<br>如果在 本地名 中添加加号（’+’），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。</p><p>例如 <a href="mailto:&#x6d;&#46;&#x79;&#x2b;&#110;&#97;&#109;&#x65;&#64;&#101;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#x6d;&#46;&#x79;&#x2b;&#110;&#97;&#109;&#x65;&#64;&#101;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a> 将转发到 <a href="mailto:&#x6d;&#x79;&#64;&#101;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x6d;&#x79;&#64;&#101;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>。<br>可以同时使用这两个规则。</p><p>给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。</p><p>示例 1：</p><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs perl">输入：emails = [<span class="hljs-string">&quot;test.email+alex@leetcode.com&quot;</span>,<span class="hljs-string">&quot;test.e.mail+bob.cathy@leetcode.com&quot;</span>,<span class="hljs-string">&quot;testemail+david@lee.tcode.com&quot;</span>]<br>输出：<span class="hljs-number">2</span><br>解释：实际收到邮件的是 <span class="hljs-string">&quot;testemail@leetcode.com&quot;</span> 和 <span class="hljs-string">&quot;testemail@lee.tcode.com&quot;</span>。<br></code></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/unique-email-addresses">https://leetcode.cn/problems/unique-email-addresses</a></p><h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numUniqueEmails</span><span class="hljs-params">(String[] emails)</span> &#123;<br>        Set&lt;String&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String s : emails) &#123;<br>            String[] ss = s.split(<span class="hljs-string">&quot;@&quot;</span>);<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : ss[<span class="hljs-number">0</span>].toCharArray()) &#123;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;.&#x27;</span>) <span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;+&#x27;</span>) <span class="hljs-keyword">break</span>;<br>                builder.append(c);<br>            &#125;<br>            set.add(builder + <span class="hljs-string">&quot;@&quot;</span> +ss[<span class="hljs-number">1</span>]);<br>        &#125; <br>        <span class="hljs-keyword">return</span> set.size();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>就是很简单的模拟题</p>]]></content>
     
     
     <categories>
