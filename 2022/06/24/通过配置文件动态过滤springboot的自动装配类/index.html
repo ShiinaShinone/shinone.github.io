@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="http://47.108.181.185:7308/icon.png">
-  <link rel="icon" href="http://47.108.181.185:7308/icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/icon.png">
+  <link rel="icon" href="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,7 +19,7 @@
     <meta name="description" content="场景在引入redis做缓存之后，即使在spring.redis.enable配置项上设为false，不启用缓存，依然会自动配置redis的连接，不配置连接就无法正常启动。现在需要通过这个配置项去控制启动项目的时候是否去自动装载redis，在@springbootApplication上exclude无法做到这样的控制。 实现新增配置类12345678910111213141516171819202">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过配置文件动态过滤springboot的自动装配类">
-<meta property="og:url" content="http://shinone.com/2022/06/24/%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A8%E6%80%81%E8%BF%87%E6%BB%A4springboot%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%B1%BB/index.html">
+<meta property="og:url" content="https://shiinashinone.github.io/shinone.github.io/2022/06/24/%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A8%E6%80%81%E8%BF%87%E6%BB%A4springboot%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%B1%BB/index.html">
 <meta property="og:site_name" content="shinone&#39;s blog">
 <meta property="og:description" content="场景在引入redis做缓存之后，即使在spring.redis.enable配置项上设为false，不启用缓存，依然会自动配置redis的连接，不配置连接就无法正常启动。现在需要通过这个配置项去控制启动项目的时候是否去自动装载redis，在@springbootApplication上exclude无法做到这样的控制。 实现新增配置类12345678910111213141516171819202">
 <meta property="og:locale" content="zh_CN">
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/shinone.github.io/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/shinone.github.io/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/shinone.github.io/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"shinone.com","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"shiinashinone.github.io","root":"/shinone.github.io/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/shinone.github.io/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/shinone.github.io/js/utils.js" ></script>
+  <script  src="/shinone.github.io/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -95,7 +95,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/shinone.github.io/">
       <strong>椎名筱音</strong>
     </a>
 
@@ -114,7 +114,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/shinone.github.io/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -126,7 +126,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/shinone.github.io/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -138,7 +138,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/shinone.github.io/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -150,7 +150,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/shinone.github.io/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -162,7 +162,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/shinone.github.io/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -191,7 +191,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('http://47.108.181.185:7308/2022052801.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/2022052801.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -314,17 +314,17 @@
     
       <span class="category-chain">
         
-  <a href="/categories/java/" class="category-chain-item">java</a>
+  <a href="/shinone.github.io/categories/java/" class="category-chain-item">java</a>
   
   
     <span>></span>
     
-  <a href="/categories/java/spring/" class="category-chain-item">spring</a>
+  <a href="/shinone.github.io/categories/java/spring/" class="category-chain-item">spring</a>
   
   
     <span>></span>
     
-  <a href="/categories/java/spring/springboot/" class="category-chain-item">springboot</a>
+  <a href="/shinone.github.io/categories/java/spring/springboot/" class="category-chain-item">springboot</a>
   
   
 
@@ -343,9 +343,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/springboot/">#springboot</a>
+        <a href="/shinone.github.io/tags/springboot/">#springboot</a>
       
-        <a href="/tags/%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">#自动装配</a>
+        <a href="/shinone.github.io/tags/%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">#自动装配</a>
       
     </div>
   
@@ -358,7 +358,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>通过配置文件动态过滤springboot的自动装配类</div>
-      <div>http://shinone.com/2022/06/24/通过配置文件动态过滤springboot的自动装配类/</div>
+      <div>https://shiinashinone.github.io/shinone.github.io/2022/06/24/通过配置文件动态过滤springboot的自动装配类/</div>
     </div>
     <div class="license-meta">
       
@@ -400,7 +400,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/24/%E5%9C%A8%E6%AF%8F%E4%B8%AA%E6%A0%91%E8%A1%8C%E4%B8%AD%E6%89%BE%E6%9C%80%E5%A4%A7%E5%80%BC/" title="515. 在每个树行中找最大值">
+                      <a href="/shinone.github.io/2022/06/24/%E5%9C%A8%E6%AF%8F%E4%B8%AA%E6%A0%91%E8%A1%8C%E4%B8%AD%E6%89%BE%E6%9C%80%E5%A4%A7%E5%80%BC/" title="515. 在每个树行中找最大值">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">515. 在每个树行中找最大值</span>
                         <span class="visible-mobile">上一篇</span>
@@ -410,7 +410,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/22/%E7%BB%98%E7%94%BB20220622/" title="透视练习-20220622">
+                      <a href="/shinone.github.io/2022/06/22/%E7%BB%98%E7%94%BB20220622/" title="透视练习-20220622">
                         <span class="hidden-mobile">透视练习-20220622</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -571,8 +571,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/shinone.github.io/js/events.js" ></script>
+<script  src="/shinone.github.io/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -596,7 +596,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/shinone.github.io/js/img-lazyload.js" ></script>
   
 
 
@@ -733,7 +733,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/shinone.github.io/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -743,7 +743,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/shinone.github.io/js/boot.js" ></script>
 
 
   

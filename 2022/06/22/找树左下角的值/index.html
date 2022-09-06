@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="http://47.108.181.185:7308/icon.png">
-  <link rel="icon" href="http://47.108.181.185:7308/icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/icon.png">
+  <link rel="icon" href="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="题目给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。假设二叉树中至少有一个节点。https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;find-bottom-left-tree-value&#x2F; dfs12345678910111213141516class Solution &amp;#123;    int d &#x3D; 0, result &#x3D; 0;    public in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="513. 找树左下角的值">
-<meta property="og:url" content="http://shinone.com/2022/06/22/%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/index.html">
+<meta property="og:url" content="https://shiinashinone.github.io/shinone.github.io/2022/06/22/%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/index.html">
 <meta property="og:site_name" content="shinone&#39;s blog">
 <meta property="og:description" content="题目给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。假设二叉树中至少有一个节点。https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;find-bottom-left-tree-value&#x2F; dfs12345678910111213141516class Solution &amp;#123;    int d &#x3D; 0, result &#x3D; 0;    public in">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://47.108.181.185:7308/20220622.png">
+<meta property="og:image" content="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/20220622.png">
 <meta property="article:published_time" content="2022-06-22T01:47:31.000Z">
-<meta property="article:modified_time" content="2022-06-25T13:42:20.220Z">
+<meta property="article:modified_time" content="2022-09-06T10:50:06.704Z">
 <meta property="article:author" content="筱音">
 <meta property="article:tag" content="二叉树">
 <meta property="article:tag" content="深度优先搜索">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://47.108.181.185:7308/20220622.png">
+<meta name="twitter:image" content="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/20220622.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -60,12 +60,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/shinone.github.io/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/shinone.github.io/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/shinone.github.io/css/highlight-dark.css" />
   
 
 
@@ -74,15 +74,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"shinone.com","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"shiinashinone.github.io","root":"/shinone.github.io/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/shinone.github.io/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/shinone.github.io/js/utils.js" ></script>
+  <script  src="/shinone.github.io/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -97,7 +97,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/shinone.github.io/">
       <strong>椎名筱音</strong>
     </a>
 
@@ -116,7 +116,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/shinone.github.io/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -128,7 +128,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/shinone.github.io/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -140,7 +140,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/shinone.github.io/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -152,7 +152,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/shinone.github.io/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -164,7 +164,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/shinone.github.io/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -193,7 +193,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('http://47.108.181.185:7308/2022052801.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/2022052801.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -283,7 +283,7 @@
             
             <div class="markdown-body">
               
-              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。<br>假设二叉树中至少有一个节点。<br><img src="http://47.108.181.185:7308/20220622.png" srcset="/img/loading.gif" lazyload alt="示例"><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-bottom-left-tree-value/">https://leetcode.cn/problems/find-bottom-left-tree-value/</a></p>
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。<br>假设二叉树中至少有一个节点。<br><img src="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/20220622.png" srcset="/shinone.github.io/img/loading.gif" lazyload alt="示例"><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-bottom-left-tree-value/">https://leetcode.cn/problems/find-bottom-left-tree-value/</a></p>
 <h1 id="dfs"><a href="#dfs" class="headerlink" title="dfs"></a>dfs</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, result = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findBottomLeftValue</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        dfs(root, <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> deep)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;<br>        <span class="hljs-keyword">if</span> (deep &gt; d) &#123;<br>            result = root.val;<br>            d = deep;<br>        &#125;<br>        dfs(root.left, deep + <span class="hljs-number">1</span>);<br>        dfs(root.right, deep + <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>蛮简单的，上次做这道题是21年的7月份，不知不觉一年就过去了啊…</p>
 
@@ -303,17 +303,17 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">算法与数据结构</a>
+  <a href="/shinone.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">算法与数据结构</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="category-chain-item">力扣每日一题</a>
+  <a href="/shinone.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="category-chain-item">力扣每日一题</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/" class="category-chain-item">中等</a>
+  <a href="/shinone.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/" class="category-chain-item">中等</a>
   
   
 
@@ -332,9 +332,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
+        <a href="/shinone.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
       
-        <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#深度优先搜索</a>
+        <a href="/shinone.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#深度优先搜索</a>
       
     </div>
   
@@ -347,7 +347,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>513. 找树左下角的值</div>
-      <div>http://shinone.com/2022/06/22/找树左下角的值/</div>
+      <div>https://shiinashinone.github.io/shinone.github.io/2022/06/22/找树左下角的值/</div>
     </div>
     <div class="license-meta">
       
@@ -389,7 +389,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/22/%E7%BB%98%E7%94%BB20220622/" title="透视练习-20220622">
+                      <a href="/shinone.github.io/2022/06/22/%E7%BB%98%E7%94%BB20220622/" title="透视练习-20220622">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">透视练习-20220622</span>
                         <span class="visible-mobile">上一篇</span>
@@ -399,7 +399,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/20/%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/" title="508. 出现次数最多的子树元素和">
+                      <a href="/shinone.github.io/2022/06/20/%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/" title="508. 出现次数最多的子树元素和">
                         <span class="hidden-mobile">508. 出现次数最多的子树元素和</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -560,8 +560,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/shinone.github.io/js/events.js" ></script>
+<script  src="/shinone.github.io/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -585,7 +585,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/shinone.github.io/js/img-lazyload.js" ></script>
   
 
 
@@ -722,7 +722,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/shinone.github.io/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -732,7 +732,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/shinone.github.io/js/boot.js" ></script>
 
 
   
