@@ -4,6 +4,66 @@
   
   
   <entry>
+    <title>790.多米诺和托米诺平铺</title>
+    <link href="/shinone.github.io/2022/11/15/%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA/"/>
+    <url>/shinone.github.io/2022/11/15/%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><img src="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/2022111501.png" alt="多米诺和托米诺平铺"></p><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>按图示一直推算，当i = n的值时，dp[i][3]就是当前列全覆盖的方案数量<br><img src="https://shinone.oss-cn-chengdu.aliyuncs.com/picture/source/2022111502.png" alt="多米诺和托米诺平铺"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">MOD</span> <span class="hljs-operator">=</span> <span class="hljs-number">1000000007</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numTilings</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>][<span class="hljs-number">4</span>];<br>        dp[<span class="hljs-number">0</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            dp[i][<span class="hljs-number">0</span>] = dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">3</span>];<br>            dp[i][<span class="hljs-number">1</span>] = (dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] + dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">2</span>]) % MOD;<br>            dp[i][<span class="hljs-number">2</span>] = (dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] + dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) % MOD;<br>            dp[i][<span class="hljs-number">3</span>] = (((dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] + dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) % MOD + dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">2</span>]) % MOD + dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">3</span>]) % MOD;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n][<span class="hljs-number">3</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法与数据结构</category>
+      
+      <category>力扣每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动态规划</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>791.自定义字符串排序</title>
+    <link href="/shinone.github.io/2022/11/14/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"/>
+    <url>/shinone.github.io/2022/11/14/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>这题又写完才发现之前做过，丢人中等题，模拟一下就行了</p><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定两个字符串 order 和 s 。order 的所有单词都是 唯一 的，并且以前按照一些自定义的顺序排序。</p><p>对 s 的字符进行置换，使其与排序的 order 相匹配。更具体地说，如果在 order 中的字符 x 出现字符 y 之前，那么在排列后的字符串中， x 也应该出现在 y 之前。</p><p>返回 满足这个性质的 s 的任意排列 。</p><p>示例 1:</p><p>输入: order = “cba”, s = “abcd”<br>输出: “cbad”<br>解释:<br>“a”、“b”、“c”是按顺序出现的，所以“a”、“b”、“c”的顺序应该是“c”、“b”、“a”。<br>因为“d”不是按顺序出现的，所以它可以在返回的字符串中的任何位置。“dcba”、“cdba”、“cbda”也是有效的输出。<br>示例 2:</p><p>输入: order = “cbafg”, s = “abcd”<br>输出: “cbad”</p><p><a href="https://leetcode.cn/problems/custom-sort-string/description/">https://leetcode.cn/problems/custom-sort-string/description/</a></p><h1 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h1><p>直接用数组统计词频重新构建string就行</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>        <span class="hljs-keyword">public</span> String <span class="hljs-title function_">customSortString</span><span class="hljs-params">(String order, String s)</span> &#123;<br>            <span class="hljs-type">int</span>[] map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : s.toCharArray()) map[c - <span class="hljs-string">&#x27;a&#x27;</span>]++;<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : order.toCharArray()) &#123;<br>                <span class="hljs-keyword">if</span> (map[c - <span class="hljs-string">&#x27;a&#x27;</span>] &gt; <span class="hljs-number">0</span>) &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; map[c - <span class="hljs-string">&#x27;a&#x27;</span>]; i++) builder.append(c);<br>                    map[c - <span class="hljs-string">&#x27;a&#x27;</span>] = <span class="hljs-number">0</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">26</span>; i++) &#123;<br>                <span class="hljs-keyword">if</span> (map[i] &gt; <span class="hljs-number">0</span>) &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; map[i]; j++) builder.append(<span class="hljs-string">&#x27;a&#x27;</span> + j);<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">return</span> builder.toString();<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法与数据结构</category>
+      
+      <category>力扣每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>模拟</tag>
+      
+      <tag>哈希表</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>864. 获取所有钥匙的最短路径</title>
     <link href="/shinone.github.io/2022/11/11/%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%92%A5%E5%8C%99%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
     <url>/shinone.github.io/2022/11/11/%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%92%A5%E5%8C%99%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</url>
@@ -994,9 +1054,9 @@
     
     <tags>
       
-      <tag>深度优先搜索</tag>
-      
       <tag>二叉树</tag>
+      
+      <tag>深度优先搜索</tag>
       
     </tags>
     
@@ -1025,11 +1085,11 @@
     
     <tags>
       
-      <tag>哈希</tag>
+      <tag>二叉树</tag>
       
       <tag>深度优先搜索</tag>
       
-      <tag>二叉树</tag>
+      <tag>哈希</tag>
       
     </tags>
     
@@ -1229,7 +1289,7 @@
     <link href="/shinone.github.io/2022/06/05/%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/"/>
     <url>/shinone.github.io/2022/06/05/%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
     
-    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 ‘@’ 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 ‘.’ 或 ‘+’ 。</p><p>例如，在 <a href="mailto:&#x61;&#108;&#105;&#99;&#101;&#x40;&#108;&#101;&#x65;&#x74;&#x63;&#111;&#x64;&#101;&#x2e;&#99;&#111;&#x6d;">&#x61;&#108;&#105;&#99;&#101;&#x40;&#108;&#101;&#x65;&#x74;&#x63;&#111;&#x64;&#101;&#x2e;&#99;&#111;&#x6d;</a>中， alice 是 本地名 ，而 leetcode.com 是 域名 。<br>如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（’.’），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。</p><p>例如，”<a href="mailto:&#97;&#x6c;&#105;&#x63;&#x65;&#x2e;&#x7a;&#64;&#108;&#101;&#101;&#x74;&#x63;&#x6f;&#100;&#x65;&#46;&#99;&#111;&#109;">&#97;&#x6c;&#105;&#x63;&#x65;&#x2e;&#x7a;&#64;&#108;&#101;&#101;&#x74;&#x63;&#x6f;&#100;&#x65;&#46;&#99;&#111;&#109;</a>” 和 “<a href="mailto:&#x61;&#108;&#105;&#x63;&#101;&#122;&#x40;&#x6c;&#x65;&#101;&#116;&#x63;&#111;&#x64;&#101;&#x2e;&#99;&#111;&#109;">&#x61;&#108;&#105;&#x63;&#101;&#122;&#x40;&#x6c;&#x65;&#101;&#116;&#x63;&#111;&#x64;&#101;&#x2e;&#99;&#111;&#109;</a>” 会转发到同一电子邮件地址。<br>如果在 本地名 中添加加号（’+’），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。</p><p>例如 <a href="mailto:&#x6d;&#x2e;&#121;&#x2b;&#110;&#x61;&#109;&#101;&#x40;&#101;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#x6d;&#x2e;&#121;&#x2b;&#110;&#x61;&#109;&#101;&#x40;&#101;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a> 将转发到 <a href="mailto:&#x6d;&#x79;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x6d;&#x79;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a>。<br>可以同时使用这两个规则。</p><p>给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。</p><p>示例 1：</p><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs perl">输入：emails = [<span class="hljs-string">&quot;test.email+alex@leetcode.com&quot;</span>,<span class="hljs-string">&quot;test.e.mail+bob.cathy@leetcode.com&quot;</span>,<span class="hljs-string">&quot;testemail+david@lee.tcode.com&quot;</span>]<br>输出：<span class="hljs-number">2</span><br>解释：实际收到邮件的是 <span class="hljs-string">&quot;testemail@leetcode.com&quot;</span> 和 <span class="hljs-string">&quot;testemail@lee.tcode.com&quot;</span>。<br></code></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/unique-email-addresses">https://leetcode.cn/problems/unique-email-addresses</a></p><h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numUniqueEmails</span><span class="hljs-params">(String[] emails)</span> &#123;<br>        Set&lt;String&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String s : emails) &#123;<br>            String[] ss = s.split(<span class="hljs-string">&quot;@&quot;</span>);<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : ss[<span class="hljs-number">0</span>].toCharArray()) &#123;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;.&#x27;</span>) <span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;+&#x27;</span>) <span class="hljs-keyword">break</span>;<br>                builder.append(c);<br>            &#125;<br>            set.add(builder + <span class="hljs-string">&quot;@&quot;</span> +ss[<span class="hljs-number">1</span>]);<br>        &#125; <br>        <span class="hljs-keyword">return</span> set.size();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>就是很简单的模拟题</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 ‘@’ 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 ‘.’ 或 ‘+’ 。</p><p>例如，在 <a href="mailto:&#x61;&#x6c;&#105;&#x63;&#101;&#x40;&#x6c;&#x65;&#101;&#x74;&#99;&#x6f;&#x64;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x61;&#x6c;&#105;&#x63;&#101;&#x40;&#x6c;&#x65;&#101;&#x74;&#99;&#x6f;&#x64;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a>中， alice 是 本地名 ，而 leetcode.com 是 域名 。<br>如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（’.’），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。</p><p>例如，”<a href="mailto:&#97;&#x6c;&#105;&#99;&#x65;&#46;&#x7a;&#64;&#108;&#101;&#101;&#x74;&#99;&#x6f;&#100;&#101;&#x2e;&#x63;&#x6f;&#109;">&#97;&#x6c;&#105;&#99;&#x65;&#46;&#x7a;&#64;&#108;&#101;&#101;&#x74;&#99;&#x6f;&#100;&#101;&#x2e;&#x63;&#x6f;&#109;</a>” 和 “<a href="mailto:&#x61;&#x6c;&#x69;&#x63;&#101;&#122;&#x40;&#108;&#x65;&#x65;&#x74;&#x63;&#111;&#100;&#x65;&#46;&#99;&#x6f;&#109;">&#x61;&#x6c;&#x69;&#x63;&#101;&#122;&#x40;&#108;&#x65;&#x65;&#x74;&#x63;&#111;&#100;&#x65;&#46;&#99;&#x6f;&#109;</a>” 会转发到同一电子邮件地址。<br>如果在 本地名 中添加加号（’+’），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。</p><p>例如 <a href="mailto:&#109;&#46;&#x79;&#43;&#110;&#x61;&#109;&#x65;&#64;&#101;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#109;&#46;&#x79;&#43;&#110;&#x61;&#109;&#x65;&#64;&#101;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a> 将转发到 <a href="mailto:&#x6d;&#121;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x6d;&#121;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a>。<br>可以同时使用这两个规则。</p><p>给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。</p><p>示例 1：</p><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs perl">输入：emails = [<span class="hljs-string">&quot;test.email+alex@leetcode.com&quot;</span>,<span class="hljs-string">&quot;test.e.mail+bob.cathy@leetcode.com&quot;</span>,<span class="hljs-string">&quot;testemail+david@lee.tcode.com&quot;</span>]<br>输出：<span class="hljs-number">2</span><br>解释：实际收到邮件的是 <span class="hljs-string">&quot;testemail@leetcode.com&quot;</span> 和 <span class="hljs-string">&quot;testemail@lee.tcode.com&quot;</span>。<br></code></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode.cn/problems/unique-email-addresses">https://leetcode.cn/problems/unique-email-addresses</a></p><h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numUniqueEmails</span><span class="hljs-params">(String[] emails)</span> &#123;<br>        Set&lt;String&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String s : emails) &#123;<br>            String[] ss = s.split(<span class="hljs-string">&quot;@&quot;</span>);<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : ss[<span class="hljs-number">0</span>].toCharArray()) &#123;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;.&#x27;</span>) <span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;+&#x27;</span>) <span class="hljs-keyword">break</span>;<br>                builder.append(c);<br>            &#125;<br>            set.add(builder + <span class="hljs-string">&quot;@&quot;</span> +ss[<span class="hljs-number">1</span>]);<br>        &#125; <br>        <span class="hljs-keyword">return</span> set.size();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>就是很简单的模拟题</p>]]></content>
     
     
     <categories>
@@ -1305,9 +1365,9 @@
     
     <tags>
       
-      <tag>拓扑排序</tag>
-      
       <tag>广度优先搜索</tag>
+      
+      <tag>拓扑排序</tag>
       
       <tag>图</tag>
       
@@ -1338,9 +1398,9 @@
     
     <tags>
       
-      <tag>深度优先搜索</tag>
-      
       <tag>二叉树</tag>
+      
+      <tag>深度优先搜索</tag>
       
     </tags>
     
