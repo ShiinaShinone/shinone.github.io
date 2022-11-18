@@ -16,26 +16,25 @@
   <meta name="author" content="筱音">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。 一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。 示例 1： 12输入: root &#x3D; [5,2,-3]输出: [2,-3,4] 示例 2： 12输入: root &#x3D; [5,2,-5]输出: [2] 来源：">
+    <meta name="description" content="题目给定字符串 s 和字符串数组 words, 返回  words[i] 中是s的子序列的单词个数 。 字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。 例如， “ace” 是 “abcde” 的子序列。 示例 1: 输入: s &#x3D; “abcde”, words &#x3D; [“a”,”bb”,”acd”,”ace”]输出: 3解释:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="508. 出现次数最多的子树元素和">
-<meta property="og:url" content="https://shiinashinone.github.io/shinone.github.io/2022/06/20/%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/index.html">
+<meta property="og:title" content="792.匹配子序列的单词数">
+<meta property="og:url" content="https://shiinashinone.github.io/shinone.github.io/2022/11/18/%E5%8C%B9%E9%85%8D%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/index.html">
 <meta property="og:site_name" content="shinone&#39;s blog">
-<meta property="og:description" content="题目给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。 一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。 示例 1： 12输入: root &#x3D; [5,2,-3]输出: [2,-3,4] 示例 2： 12输入: root &#x3D; [5,2,-5]输出: [2] 来源：">
+<meta property="og:description" content="题目给定字符串 s 和字符串数组 words, 返回  words[i] 中是s的子序列的单词个数 。 字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。 例如， “ace” 是 “abcde” 的子序列。 示例 1: 输入: s &#x3D; “abcde”, words &#x3D; [“a”,”bb”,”acd”,”ace”]输出: 3解释:">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-20T01:22:11.000Z">
-<meta property="article:modified_time" content="2022-06-25T13:42:20.218Z">
+<meta property="article:published_time" content="2022-11-18T02:55:40.000Z">
+<meta property="article:modified_time" content="2022-11-18T02:59:44.457Z">
 <meta property="article:author" content="筱音">
 <meta property="article:tag" content="哈希">
-<meta property="article:tag" content="二叉树">
-<meta property="article:tag" content="深度优先搜索">
+<meta property="article:tag" content="二分">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>508. 出现次数最多的子树元素和 - shinone&#39;s blog</title>
+  <title>792.匹配子序列的单词数 - shinone&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="508. 出现次数最多的子树元素和"></span>
+            <span id="subtitle" data-typed-text="792.匹配子序列的单词数"></span>
           
         </div>
 
@@ -209,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-20 09:22" pubdate>
-          2022年6月20日 上午
+        <time datetime="2022-11-18 10:55" pubdate>
+          2022年11月18日 上午
         </time>
       </span>
     
@@ -221,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          976 字
+          1.3k 字
         
       </span>
     
@@ -232,7 +231,7 @@
         
         
         
-          9 分钟
+          12 分钟
         
       </span>
     
@@ -278,18 +277,21 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">508. 出现次数最多的子树元素和</h1>
+            <h1 style="display: none">792.匹配子序列的单词数</h1>
             
             <div class="markdown-body">
               
-              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。</p>
-<p>一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。</p>
-<p>示例 1：</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: root = <span class="hljs-comment">[5,2,-3]</span><br>输出: <span class="hljs-comment">[2,-3,4]</span><br></code></pre></td></tr></table></figure>
-<p>示例 2：</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: root = <span class="hljs-comment">[5,2,-5]</span><br>输出: <span class="hljs-comment">[2]</span><br></code></pre></td></tr></table></figure>
-<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/most-frequent-subtree-sum">https://leetcode.cn/problems/most-frequent-subtree-sum</a></p>
-<h1 id="DFS-哈希"><a href="#DFS-哈希" class="headerlink" title="DFS+哈希"></a>DFS+哈希</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    Map&lt;Integer, Integer&gt; map;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] findFrequentTreeSum(TreeNode root) &#123;<br>        map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        count(root);<br>        ArrayList&lt;Integer&gt; arrayList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span>(Map.Entry&lt;Integer, Integer&gt; e : map.entrySet()) &#123;<br>            <span class="hljs-keyword">if</span> (e.getValue() == max) arrayList.add(e.getKey());<br>        &#125;<br>        <span class="hljs-type">int</span>[] result = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[arrayList.size()];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; result.length; i++) result[i] = arrayList.get(i);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">count</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> root.val + count(root.left) + count(root.right);<br>        <span class="hljs-type">Integer</span> <span class="hljs-variable">orDefault</span> <span class="hljs-operator">=</span> map.getOrDefault(count, <span class="hljs-number">0</span>);<br>        orDefault++;<br>        map.put(count, orDefault);<br>        max = Math.max(max, orDefault);<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定字符串 s 和字符串数组 words, 返回  words[i] 中是s的子序列的单词个数 。</p>
+<p>字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。</p>
+<p>例如， “ace” 是 “abcde” 的子序列。</p>
+<p>示例 1:</p>
+<p>输入: s = “abcde”, words = [“a”,”bb”,”acd”,”ace”]<br>输出: 3<br>解释: 有三个是 s 的子序列的单词: “a”, “acd”, “ace”。<br>Example 2:</p>
+<p>输入: s = “dsahjpjauf”, words = [“ahjpjau”,”ja”,”ahbwzgqnuk”,”tnmlanowax”]<br>输出: 2</p>
+<p>提示:</p>
+<p>1 &lt;= s.length &lt;= 5 * 104<br>1 &lt;= words.length &lt;= 5000<br>1 &lt;= words[i].length &lt;= 50<br>words[i]和 s 都只由小写字母组成。</p>
+<h1 id="哈希-二分"><a href="#哈希-二分" class="headerlink" title="哈希+二分"></a>哈希+二分</h1><p>写完 自己测试一下 然后提交一次通过 爽到<br>传统做法是每个单词都去遍历一遍模板字符串，因为数据范围很大会超时，<br>每个单词的搜索又是避免不了的，只能优化查找的方法，跳过不必要的检索<br>于是对模板字符串做预处理，用一个哈希表列表去统计每个字母的下标列表<br>对每个待匹配单词，记录当前下标然后去查询列表中对应字母的下标，<br>最后这一步查找又可以用二分查找进一步优化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numMatchingSubseq</span><span class="hljs-params">(String s, String[] words)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">length</span> <span class="hljs-operator">=</span> s.length();<br>        List&lt;Integer&gt;[] map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">List</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; length; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> s.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>;<br>            <span class="hljs-keyword">if</span> (map[index] == <span class="hljs-literal">null</span>) map[index] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>            map[index].add(i);<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        go:<br>        <span class="hljs-keyword">for</span> (String sub : words) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>, len = sub.length();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>                List&lt;Integer&gt; indexList = map[sub.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>];<br>                <span class="hljs-keyword">if</span> (indexList == <span class="hljs-literal">null</span>) <span class="hljs-keyword">continue</span> go;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, r = indexList.size() - <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">while</span> (l &lt; r) &#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> (l + r) / <span class="hljs-number">2</span>;<br>                    <span class="hljs-keyword">if</span> (index &lt; indexList.get(mid)) &#123;<br>                        r = mid;<br>                    &#125;<span class="hljs-keyword">else</span> &#123;<br>                        l = mid + <span class="hljs-number">1</span>;<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span>(indexList.get(r) &lt;= index) <span class="hljs-keyword">continue</span> go;<br>                index = indexList.get(r);<br>            &#125;<br>            result++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
               
             </div>
             <hr/>
@@ -337,9 +339,7 @@
       
         <a href="/shinone.github.io/tags/%E5%93%88%E5%B8%8C/">#哈希</a>
       
-        <a href="/shinone.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
-      
-        <a href="/shinone.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#深度优先搜索</a>
+        <a href="/shinone.github.io/tags/%E4%BA%8C%E5%88%86/">#二分</a>
       
     </div>
   
@@ -351,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>508. 出现次数最多的子树元素和</div>
-      <div>https://shiinashinone.github.io/shinone.github.io/2022/06/20/出现次数最多的子树元素和/</div>
+      <div>792.匹配子序列的单词数</div>
+      <div>https://shiinashinone.github.io/shinone.github.io/2022/11/18/匹配子序列的单词数/</div>
     </div>
     <div class="license-meta">
       
@@ -364,7 +364,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月20日</div>
+          <div>2022年11月18日</div>
         </div>
       
       
@@ -394,18 +394,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/shinone.github.io/2022/06/22/%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/" title="513. 找树左下角的值">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">513. 找树左下角的值</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/shinone.github.io/2022/06/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84k-diff%E6%95%B0%E5%AF%B9/" title="532. 数组中的 k-diff 数对">
-                        <span class="hidden-mobile">532. 数组中的 k-diff 数对</span>
+                      <a href="/shinone.github.io/2022/11/16/%E5%85%A8%E5%B1%80%E5%80%92%E7%BD%AE%E4%B8%8E%E5%B1%80%E9%83%A8%E5%80%92%E7%BD%AE/" title="全局倒置与局部倒置">
+                        <span class="hidden-mobile">全局倒置与局部倒置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

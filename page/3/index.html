@@ -225,6 +225,76 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/shinone.github.io/2022/07/08/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%92%8C%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" target="_self">
+          装饰器模式和代理模式
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/shinone.github.io/2022/07/08/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%92%8C%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" target="_self">
+        <div>
+          非常想把这俩一起说，主要是因为真的太像了。 装饰器模式它可以不改变现有对象的结构，并且添加新的功能，其实就是作为现有类的一个包装。可以不创建过多的子类重写方法，简单的对一两个方法进行增强。1、创建包装器的抽象类，实现装饰对象的接口，内部加一个装饰对象的成员变量，通过构造器传入参数赋值到成员变量上2、造一个包装器的实现类，实现装饰对象的方法，在实现的方法中通过成员变量调用装饰对象的原本的方法，这样在
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-07-08 16:43" pubdate>
+              2022-07-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/shinone.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="category-chain-item">设计模式</a>
+  
+  
+    <span>></span>
+    
+  <a href="/shinone.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="category-chain-item">结构型模式</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/shinone.github.io/tags/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/">#装饰器模式</a>
+            
+              <a href="/shinone.github.io/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">#代理模式</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/shinone.github.io/2022/07/07/%E5%8D%95%E8%AF%8D%E6%9B%BF%E6%8D%A2/" target="_self">
           648. 单词替换
         </a>
@@ -866,83 +936,6 @@
               <a href="/shinone.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
             
               <a href="/shinone.github.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#广度优先搜索</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/shinone.github.io/2022/06/24/%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A8%E6%80%81%E8%BF%87%E6%BB%A4springboot%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%B1%BB/" target="_self">
-          通过配置文件动态过滤springboot的自动装配类
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/shinone.github.io/2022/06/24/%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A8%E6%80%81%E8%BF%87%E6%BB%A4springboot%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%B1%BB/" target="_self">
-        <div>
-          场景在引入redis做缓存之后，即使在spring.redis.enable配置项上设为false，不启用缓存，依然会自动配置redis的连接，不配置连接就无法正常启动。现在需要通过这个配置项去控制启动项目的时候是否去自动装载redis，在@springbootApplication上exclude无法做到这样的控制。 实现新增配置类12345678910111213141516171819202
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-06-24 10:18" pubdate>
-              2022-06-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/shinone.github.io/categories/java/" class="category-chain-item">java</a>
-  
-  
-    <span>></span>
-    
-  <a href="/shinone.github.io/categories/java/spring/" class="category-chain-item">spring</a>
-  
-  
-    <span>></span>
-    
-  <a href="/shinone.github.io/categories/java/spring/springboot/" class="category-chain-item">springboot</a>
-  
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/shinone.github.io/tags/springboot/">#springboot</a>
-            
-              <a href="/shinone.github.io/tags/%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">#自动装配</a>
             
           </div>
         
