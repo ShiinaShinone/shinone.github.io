@@ -16,15 +16,15 @@
   <meta name="author" content="筱音">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目我们把玻璃杯摆成金字塔的形状，其中 第一层 有 1 个玻璃杯， 第二层 有 2 个，依次类推到第 100 层，每个玻璃杯 (250ml) 将盛有香槟。 从顶层的第一个玻璃杯开始倾倒一些香槟，当顶层的杯子满了，任何溢出的香槟都会立刻等流量的流向左右两侧的玻璃杯。当左右两边的杯子也满了，就会等流量的流向它们左右两边的杯子，依次类推。（当最底层的玻璃杯满了，香槟会流到地板上） 例如，在倾倒一杯香槟后">
+    <meta name="description" content="题目有 A 和 B 两种类型 的汤。一开始每种类型的汤有 n 毫升。有四种分配操作： 提供 100ml 的 汤A 和 0ml 的 汤B 。提供 75ml 的 汤A 和 25ml 的 汤B 。提供 50ml 的 汤A 和 50ml 的 汤B 。提供 25ml 的 汤A 和 75ml 的 汤B 。当我们把汤分配给某人之后，汤就没有了。每个回合，我们将从四种概率同为 0.25 的操作中进行分配选择。如果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="799.香槟塔">
-<meta property="og:url" content="https://shiinashinone.github.io/shinone.github.io/2022/11/21/%E9%A6%99%E6%A7%9F%E5%A1%94/index.html">
+<meta property="og:title" content="808.分汤">
+<meta property="og:url" content="https://shiinashinone.github.io/shinone.github.io/2022/11/22/%E5%88%86%E6%B1%A4/index.html">
 <meta property="og:site_name" content="shinone&#39;s blog">
-<meta property="og:description" content="题目我们把玻璃杯摆成金字塔的形状，其中 第一层 有 1 个玻璃杯， 第二层 有 2 个，依次类推到第 100 层，每个玻璃杯 (250ml) 将盛有香槟。 从顶层的第一个玻璃杯开始倾倒一些香槟，当顶层的杯子满了，任何溢出的香槟都会立刻等流量的流向左右两侧的玻璃杯。当左右两边的杯子也满了，就会等流量的流向它们左右两边的杯子，依次类推。（当最底层的玻璃杯满了，香槟会流到地板上） 例如，在倾倒一杯香槟后">
+<meta property="og:description" content="题目有 A 和 B 两种类型 的汤。一开始每种类型的汤有 n 毫升。有四种分配操作： 提供 100ml 的 汤A 和 0ml 的 汤B 。提供 75ml 的 汤A 和 25ml 的 汤B 。提供 50ml 的 汤A 和 50ml 的 汤B 。提供 25ml 的 汤A 和 75ml 的 汤B 。当我们把汤分配给某人之后，汤就没有了。每个回合，我们将从四种概率同为 0.25 的操作中进行分配选择。如果">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-21T11:26:14.000Z">
-<meta property="article:modified_time" content="2022-11-21T11:32:13.535Z">
+<meta property="article:published_time" content="2022-11-22T02:34:42.000Z">
+<meta property="article:modified_time" content="2022-11-22T02:44:02.596Z">
 <meta property="article:author" content="筱音">
 <meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>799.香槟塔 - shinone&#39;s blog</title>
+  <title>808.分汤 - shinone&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="799.香槟塔"></span>
+            <span id="subtitle" data-typed-text="808.分汤"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-21 19:26" pubdate>
-          2022年11月21日 晚上
+        <time datetime="2022-11-22 10:34" pubdate>
+          2022年11月22日 上午
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.4k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          11 分钟
+          12 分钟
         
       </span>
     
@@ -276,21 +276,21 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">799.香槟塔</h1>
+            <h1 style="display: none">808.分汤</h1>
             
             <div class="markdown-body">
               
-              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>我们把玻璃杯摆成金字塔的形状，其中 第一层 有 1 个玻璃杯， 第二层 有 2 个，依次类推到第 100 层，每个玻璃杯 (250ml) 将盛有香槟。</p>
-<p>从顶层的第一个玻璃杯开始倾倒一些香槟，当顶层的杯子满了，任何溢出的香槟都会立刻等流量的流向左右两侧的玻璃杯。当左右两边的杯子也满了，就会等流量的流向它们左右两边的杯子，依次类推。（当最底层的玻璃杯满了，香槟会流到地板上）</p>
-<p>例如，在倾倒一杯香槟后，最顶层的玻璃杯满了。倾倒了两杯香槟后，第二层的两个玻璃杯各自盛放一半的香槟。在倒三杯香槟后，第二层的香槟满了 - 此时总共有三个满的玻璃杯。在倒第四杯后，第三层中间的玻璃杯盛放了一半的香槟，他两边的玻璃杯各自盛放了四分之一的香槟，如下图所示。</p>
-<p>现在当倾倒了非负整数杯香槟后，返回第 i 行 j 个玻璃杯所盛放的香槟占玻璃杯容积的比例（ i 和 j 都从0开始）。</p>
-<p>示例 1:<br>输入: poured(倾倒香槟总杯数) = 1, query_glass(杯子的位置数) = 1, query_row(行数) = 1<br>输出: 0.00000<br>解释: 我们在顶层（下标是（0，0））倒了一杯香槟后，没有溢出，因此所有在顶层以下的玻璃杯都是空的。</p>
-<p>示例 2:<br>输入: poured(倾倒香槟总杯数) = 2, query_glass(杯子的位置数) = 1, query_row(行数) = 1<br>输出: 0.50000<br>解释: 我们在顶层（下标是（0，0）倒了两杯香槟后，有一杯量的香槟将从顶层溢出，位于（1，0）的玻璃杯和（1，1）的玻璃杯平分了这一杯香槟，所以每个玻璃杯有一半的香槟。<br>示例 3:</p>
-<p>输入: poured = 100000009, query_row = 33, query_glass = 17<br>输出: 1.00000</p>
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>有 A 和 B 两种类型 的汤。一开始每种类型的汤有 n 毫升。有四种分配操作：</p>
+<p>提供 100ml 的 汤A 和 0ml 的 汤B 。<br>提供 75ml 的 汤A 和 25ml 的 汤B 。<br>提供 50ml 的 汤A 和 50ml 的 汤B 。<br>提供 25ml 的 汤A 和 75ml 的 汤B 。<br>当我们把汤分配给某人之后，汤就没有了。每个回合，我们将从四种概率同为 0.25 的操作中进行分配选择。如果汤的剩余量不足以完成某次操作，我们将尽可能分配。当两种类型的汤都分配完时，停止操作。</p>
+<p>注意 不存在先分配 100 ml 汤B 的操作。</p>
+<p>需要返回的值： 汤A 先分配完的概率 +  汤A和汤B 同时分配完的概率 / 2。返回值在正确答案 10-5 的范围内将被认为是正确的。</p>
+<p>示例 1:</p>
+<p>输入: n = 50<br>输出: 0.62500<br>解释:如果我们选择前两个操作，A 首先将变为空。<br>对于第三个操作，A 和 B 会同时变为空。<br>对于第四个操作，B 首先将变为空。<br>所以 A 变为空的总概率加上 A 和 B 同时变为空的概率的一半是 0.25 *(1 + 1 + 0.5 + 0)= 0.625。<br>示例 2:</p>
+<p>输入: n = 100<br>输出: 0.71875</p>
 <p>提示:</p>
-<p>0 &lt;= poured &lt;= 109<br>0 &lt;= query_glass &lt;= query_row &lt; 100</p>
-<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>设dp[i][j]为层数i中，每一层第j个杯子<strong>所流淌过</strong>的香槟数量,每一次dp 如果当前杯子流淌的数量大于1，就向下一层累加<br>比如第一杯流了25瓶，那么第二层的两杯就分别是(25 - 1) / 2 = 12杯</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">champagneTower</span><span class="hljs-params">(<span class="hljs-type">int</span> poured, <span class="hljs-type">int</span> query_row, <span class="hljs-type">int</span> query_glass)</span> &#123;<br>        <span class="hljs-keyword">if</span> (query_row == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> poured &gt; <span class="hljs-number">0</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;<br>        <span class="hljs-type">double</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[query_row + <span class="hljs-number">2</span>][query_row + <span class="hljs-number">2</span>];<br>        dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = poured;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt;= query_row; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt;= i; j++) &#123;<br>                <span class="hljs-type">double</span> <span class="hljs-variable">add</span> <span class="hljs-operator">=</span> dp[i][j] &gt; <span class="hljs-number">1</span> ? ((dp[i][j] - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>) : <span class="hljs-number">0</span>;<br>                dp[i + <span class="hljs-number">1</span>][j] += add;<br>                dp[i + <span class="hljs-number">1</span>][j + <span class="hljs-number">1</span>] += add;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> Math.min(dp[query_row][query_glass], <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>0 &lt;= n &lt;= 10^9</p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>并不是我能做出来的问题，但是可以看懂。<br>首先四种数值都是25的整数倍，所以可全都除以25，变成4 0、3 1、2 2、1 3<br>四种情况<br>然后就是传统的二维数组dp，但是问题就出现在这了，数据范围是10^9,就算除以25，也有4*10^8这么大的范围，必然会超出内存和时间限制。<br>然后就到概率论出场了，一次分配A的期望是2.5 B的期望是1.5，在总数量很高的时候A比B先分配完的概率是非常高的，那么一定存在一个数值，在大于这个值的时候概率高于0.99999<br>，这样就能把状态数量压缩到一个很小的数值，这个值就是179。<br>接下来就是传统的二维dp，写出状态转移方程然后双重循环到n值就结束了。<br>浮点数 + 概率论 + 动态规划 可恶 我太菜了(´；ω；`)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">soupServings</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        n = (<span class="hljs-type">int</span>) Math.ceil((<span class="hljs-type">double</span>) n / <span class="hljs-number">25</span>);<br>        <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">179</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1.0</span>;<br>        &#125;<br>        <span class="hljs-type">double</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[n + <span class="hljs-number">1</span>][n + <span class="hljs-number">1</span>];<br>        dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0.5</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            dp[<span class="hljs-number">0</span>][i] = <span class="hljs-number">1.0</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= n; j++) &#123;<br>                dp[i][j] = (dp[Math.max(<span class="hljs-number">0</span>, i - <span class="hljs-number">4</span>)][j] + dp[Math.max(<span class="hljs-number">0</span>, i - <span class="hljs-number">3</span>)][Math.max(<span class="hljs-number">0</span>, j - <span class="hljs-number">1</span>)] + dp[Math.max(<span class="hljs-number">0</span>, i - <span class="hljs-number">2</span>)][Math.max(<span class="hljs-number">0</span>, j - <span class="hljs-number">2</span>)] + dp[Math.max(<span class="hljs-number">0</span>, i - <span class="hljs-number">1</span>)][Math.max(<span class="hljs-number">0</span>, j - <span class="hljs-number">3</span>)]) / <span class="hljs-number">4.0</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n][n];<br>    &#125;<br>&#125;<br><span class="hljs-comment">//作者：力扣官方题解</span><br><span class="hljs-comment">//链接：https://leetcode.cn/problems/soup-servings/solutions/1981704/fen-tang-by-leetcode-solution-0yxs/</span><br><span class="hljs-comment">//来源：力扣（LeetCode）</span><br><span class="hljs-comment">//著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></code></pre></td></tr></table></figure>
 
               
             </div>
@@ -349,8 +349,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>799.香槟塔</div>
-      <div>https://shiinashinone.github.io/shinone.github.io/2022/11/21/香槟塔/</div>
+      <div>808.分汤</div>
+      <div>https://shiinashinone.github.io/shinone.github.io/2022/11/22/分汤/</div>
     </div>
     <div class="license-meta">
       
@@ -362,7 +362,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月21日</div>
+          <div>2022年11月22日</div>
         </div>
       
       
@@ -392,18 +392,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/shinone.github.io/2022/11/22/%E5%88%86%E6%B1%A4/" title="808.分汤">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">808.分汤</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/shinone.github.io/2022/11/18/%E5%8C%B9%E9%85%8D%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/" title="792.匹配子序列的单词数">
-                        <span class="hidden-mobile">792.匹配子序列的单词数</span>
+                      <a href="/shinone.github.io/2022/11/21/%E9%A6%99%E6%A7%9F%E5%A1%94/" title="799.香槟塔">
+                        <span class="hidden-mobile">799.香槟塔</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
